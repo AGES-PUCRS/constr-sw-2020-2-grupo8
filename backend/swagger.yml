@@ -1,0 +1,56 @@
+swagger: "2.0"
+info:
+  description: "Essa documentação tem como objetivo apresentar os contratos do microserviço da entidade \"Disciplinas\" como parte da avaliação da disciplina de Construção de Software."
+  version: "1.0.0"
+  title: "Swagger Disciplinas - Microserviços PUCRS"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+
+
+host: "disciplinas.swagger.io"
+basePath: "/"
+tags:
+- name: "disciplina"
+  description: "Qualquer coisa sobre as disciplinas"
+schemes:
+- "http"
+paths:
+  /disciplinas:
+    get:
+      tags:
+      - "disciplina"
+      summary: "Busca todas"
+      description: "Busca todas as disciplinas cadastradas"
+      operationId: "getAllDisciplines"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "OK"
+  /disciplinas/{disciplinaid}:
+    get:
+      tags:
+      - "disciplina"
+      summary: "Busca disciplina pelo id"
+      description: "Busca disciplina pelo id"
+      operationId: "getDiscipline"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "disciplinaid"
+        in: "path"
+        description: "Id da disciplina para retornar"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        "200":
+          description: "OK"
