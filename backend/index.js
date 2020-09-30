@@ -101,6 +101,43 @@ server.route({
 //GET<root>/<api>?<query>: Retorna as disciplinas que atendem à query
 
 //DELETE<root>/<api>/<id>:Busca uma nova disciplina
+server.route({
+    method: "DELETE",
+    path: "/disciplinas/{id}",
+    options: {
+        validate: {
+            payload: {
+                codigo: joi.number().required(),
+            },
+            failAction: (request, resp, error) => {
+                return error.isJoi ?
+                    resp.response(error.details[0]).takeover() :
+                    resp.response(error).takeover();
+            },
+        },
+    },
+    handler: async(request, resp) => {
+        try {
+            let codigoRequest = request.payload.codigo;
+            let findOne = DisciplineModel.findOne({ codigo: codigoRequest }).exec();
+            if (findOne) {
+                await DisciplineModel.deleteOne(findOne);
+                let data = {
+                    status: "Sucesso",
+                    message: "Objeto deletado",
+                };
+                return resp.response(data).code(200);
+            }
+            let data = {
+                status: "Falha",
+                message: "Objeto não encontrado",
+            };
+            return resp.response(data).code(404);
+        } catch (error) {
+            return resp.response(error).code(500);
+        }
+    },
+});
 
 //POST<root>/<api>: Registra uma nova turma
 server.route({
@@ -150,5 +187,47 @@ server.route({
 });
 
 //PUT<root>/<api>/id>: Atualiza a disciplina com esse id
+server.route({
+    method: "PUT",
+    path: "/disciplinas/{id}",
+    options: {
+        validate: {
+            payload: {
+                nome: joi.string().required(),
+                codigo: joi.number().required(),
+                creditos: joi.string().required(),
+                objetivos: joi.string().required(),
+                ementa: joi.string().required(),
+                bibliografia: joi.array().required(),
+            },
+            failAction: (request, resp, error) => {
+                return error.isJoi ?
+                    resp.response(error.details[0]).takeover() :
+                    resp.response(error).takeover();
+            },
+        },
+    },
+    handler: async(request, resp) => {
+        try {
+            let codigoRequest = request.payload.codigo;
+            let findOne = DisciplineModel.findOne({ codigo: codigoRequest }).exec();
+            if (findOne) {
+                await DisciplineModel.update(findOne);
+                let data = {
+                    status: "Sucesso",
+                    message: "Objeto atualizado",
+                };
+                return resp.response(data).code(200);
+            }
+            let data = {
+                status: "Falha",
+                message: "Objeto não encontrado",
+            };
+            return resp.response(data).code(404);
+        } catch (error) {
+            return resp.response(error).code(500);
+        }
+    },
+});
 
-//PATCH<root>/<api>/id>: Atualiza parcialmente a disciplina com aquele id
+d //PATCH<root>/<api>/id>: Atualiza parcialmente a disciplina com aquele id
