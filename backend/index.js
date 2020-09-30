@@ -230,4 +230,4 @@ server.route({
     },
 });
 
-d //PATCH<root>/<api>/id>: Atualiza parcialmente a disciplina com aquele id
+//PATCH<root>/<api>/id>: Atualiza parcialmente a disciplina com aquele id
