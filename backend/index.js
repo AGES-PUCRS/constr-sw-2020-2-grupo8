@@ -12,30 +12,30 @@ const joi = require("joi");
 /* Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks. */
 const mongoose = require("mongoose");
 
+const requiredir = require("require-dir");
+
 const server = new hapi.Server({
   host: "localhost/constr-sw-2020-2-grupo8",
-  port: 9876,
+  port: 27017,
   routes: { cors: { origin: ["*"] } },
 });
 
-server.use("/api-docs", swaggerUi.serve, swaggerUi.setup(openApiDocumentation));
+const express = require("express")
+
+//server.use("/api-docs", swaggerUi.serve, swaggerUi.setup(openApiDocumentation));
 
 /* MongoDb connection */
-mongoose.connect("mongodb://localhost/constr-sw-2020-2-grupo8", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose
+	.connect("mongodb://localhost:27017/acmedb", { useNewUrlParser: true })
+	.then(() => {
+		const app = express()
 
+		app.listen(27017, () => {
+			console.log("Server has started!")
+		})
+	})
 /* Model */
-const DisciplineModel = mongoose.model("discipline", {
-  nome: String,
-  codigo: Number,
-  creditos: Number,
-  objetivos: String,
-  ementa: String,
-  bibliografia: Array,
-  criado: Date.now,
-});
+requiredir("./models");
 
 //GET<root>/<api>: Busca todas as disciplinas que estão cadastradas
 server.route({

@@ -31,4 +31,4 @@ const DisciplineModel = new mongoose.Schema({
   },
 });
 
-mongoose.model("discipline", DisciplineModel);
+mongoose.model("Disciplina", DisciplineModel);
