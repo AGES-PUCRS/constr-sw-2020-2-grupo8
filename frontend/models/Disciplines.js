@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ProductSchema = new mongoose.Schema({
+const DisciplineModel = new mongoose.Schema({
   nome: {
     type: String,
     required: true,
@@ -31,4 +31,4 @@ const ProductSchema = new mongoose.Schema({
   },
 });
 
-mongoose.model("discipline", ProductSchema);
+mongoose.model("discipline", DisciplineModel);
