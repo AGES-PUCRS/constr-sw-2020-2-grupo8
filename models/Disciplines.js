@@ -1,0 +1,34 @@
+const mongoose = require("mongoose");
+
+const ProductSchema = new mongoose.Schema({
+  nome: {
+    type: String,
+    required: true,
+  },
+  objetivos: {
+    type: String,
+    required: true,
+  },
+  ementa: {
+    type: String,
+    required: true,
+  },
+  bibliografia: {
+    type: Array,
+    required: true,
+  },
+  codigo: {
+    type: Number,
+    requires: true,
+  },
+  creditos: {
+    type: Number,
+    requires: true,
+  },
+  criado: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+mongoose.model("discipline", ProductSchema);
