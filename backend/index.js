@@ -1,9 +1,5 @@
 /* Back-end para o trabalho da cadeira de Construção de Software */
 
-/* swagger-ui is a traditional npm module intended for use in single-page applications that are capable of resolving dependencies (via Webpack, Browserify, etc). */
-const swaggerUI = require("swagger-ui");
-
-const openApiDocumentation = require("./openApiDocumentation");
 /* Hapi is a simple to use configuration-centric framework with built-in support for input validation, 
 caching, authentication, and other essential facilities for building web and services applications. */
 const hapi = require("hapi");
@@ -11,29 +7,29 @@ const hapi = require("hapi");
 const joi = require("joi");
 /* Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks. */
 const mongoose = require("mongoose");
-
+const YAML = require("yamljs");
+const swaggerDocument = YAML.load("../swagger.yml");
 const requiredir = require("require-dir");
 
 const server = new hapi.Server({
-  host: "localhost/constr-sw-2020-2-grupo8",
+  host: "mongodb://localhost:27017",
   port: 27017,
   routes: { cors: { origin: ["*"] } },
 });
 
-const express = require("express")
+const express = require("express");
 
-//server.use("/api-docs", swaggerUi.serve, swaggerUi.setup(openApiDocumentation));
+app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 /* MongoDb connection */
-mongoose
-	.connect("mongodb://localhost:27017/acmedb", { useNewUrlParser: true })
-	.then(() => {
-		const app = express()
-
-		app.listen(27017, () => {
-			console.log("Server has started!")
-		})
-	})
+mongoose.connect("mongodb://localhost:27017/Disciplina?authSource=root", {
+  auth: {
+    authSource: "admin",
+  },
+  user: "root",
+  pass: "example",
+  useNewUrlParser: true,
+});
 /* Model */
 requiredir("./models");
 
