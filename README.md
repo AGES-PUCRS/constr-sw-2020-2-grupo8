@@ -1,1 +1,3 @@
-# constr-sw-2020-2-grupo8
+# Trabalho Construção de Software
+
+## Alunos: Chiara Paskulin, Gustavo Possebon e Fabrício Pujol.
