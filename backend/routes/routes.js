@@ -2,7 +2,11 @@ const express = require("express");
 
 const routes = express.Router();
 
-const DisciplineController = require("../controllers/DisciplineController");
+const DisciplineController = require("../Controllers/DisciplineController");
+
+const middleware = require("../Middleware/middleware.js");
+
+const schemas = require("../Models/joi.js");
 
 routes.get("/disciplinas", DisciplineController.list);
 routes.get("/disciplinas/:id", DisciplineController.get);

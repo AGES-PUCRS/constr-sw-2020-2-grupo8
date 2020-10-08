@@ -14,7 +14,7 @@ const DisciplineModel = new mongoose.Schema({
     required: true,
   },
   bibliografia: {
-    type: Array,
+    type: [String],
     required: true,
   },
   codigo: {
