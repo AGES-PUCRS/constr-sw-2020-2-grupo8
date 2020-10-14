@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const DisciplineModel = new mongoose.Schema({
+const DisciplinaModel = new mongoose.Schema({
   nome: {
     type: String,
     required: true,
@@ -31,4 +31,4 @@ const DisciplineModel = new mongoose.Schema({
   },
 });
 
-mongoose.model("Disciplina", DisciplineModel);
+module.exports = mongoose.model("Disciplina", DisciplinaModel);
