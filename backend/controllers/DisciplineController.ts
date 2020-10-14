@@ -117,7 +117,7 @@ export default {
       abortEarly: false,
     });
 
-    const discipline = await DisciplineRepository.findOneAndUpdate(data, {
+    const discipline = await DisciplineRepository.findByIdAndUpdate(id, data, {
       new: true,
     });
 
@@ -157,8 +157,10 @@ export default {
   async delete(request: Request, response: Response) {
     const { id } = request.params;
 
-    await DisciplineRepository.findByIdAndRemove(id);
-
-    return response.status(200).send("Disciplina deletada com sucesso");
+    const discipline = await DisciplineRepository.findByIdAndRemove(id);
+    if (discipline) {
+      return response.status(200).send("Disciplina deletada com sucesso");
+    }
+    return response.status(400).send("Disciplina não encontrada");
   },
 };
