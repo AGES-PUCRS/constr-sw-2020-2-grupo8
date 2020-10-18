@@ -32,8 +32,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(errorHandler);
 app.use("/api", routes);
 app.use("/api/docs", serve, setup(swaggerDocument));
-app.use(errorHandler);
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));

@@ -53,20 +53,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{localhost}}/api/disciplinas/?id=12312",
+					"raw": "{{localhost}}/api/disciplinas/5f8c798581d64301a0f7d25e",
 					"host": [
 						"{{localhost}}"
 					],
 					"path": [
 						"api",
 						"disciplinas",
-						""
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "12312"
-						}
+						"5f8c798581d64301a0f7d25e"
 					]
 				}
 			},
@@ -79,7 +73,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \r\n  \"nome\": \"Teste\",\r\n  \"objetivos\": \"teste\",\r\n  \"ementa\": \"teste\",\r\n  \"bibliografia\": [\"Teste\", \"Teste\"],\r\n  \"codigo\": 12312,\r\n  \"creditos\": 4\r\n}",
+					"raw": "{\r\n    \"nome\": \"Construção de Software\",\r\n    \"objetivos\": \"Conhecimento em Construção de Software\",\r\n    \"ementa\": \"Ementa exemplo\",\r\n    \"bibliografia\": [\r\n        \"bibliografia 1\",\r\n        \"bibliografia 2\"\r\n    ],\r\n    \"codigo\": 12345,\r\n    \"creditos\": 4\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -106,7 +100,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n    \"nome\": \"Alterando nome\",\r\n    \"objetivos\": \"Conhecimento em Construção de Software\",\r\n    \"ementa\": \"Testando alteracao\",\r\n    \"bibliografia\": [\r\n        \"bibliografia 1\",\r\n        \"bibliografia 2\"\r\n    ],\r\n    \"codigo\": 12345,\r\n    \"creditos\": 4\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -114,13 +108,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{localhost}}/api/disciplinas",
+					"raw": "{{localhost}}/api/disciplinas/5f8c798581d64301a0f7d25e",
 					"host": [
 						"{{localhost}}"
 					],
 					"path": [
 						"api",
-						"disciplinas"
+						"disciplinas",
+						"5f8c798581d64301a0f7d25e"
 					]
 				}
 			},
@@ -159,13 +154,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{localhost}}/api/disciplinas",
+					"raw": "{{localhost}}/api/disciplinas/5f8c815713c440054d412ec3",
 					"host": [
 						"{{localhost}}"
 					],
 					"path": [
 						"api",
-						"disciplinas"
+						"disciplinas",
+						"5f8c815713c440054d412ec3"
 					]
 				}
 			},

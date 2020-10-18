@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Document, Model, Schema } from "mongoose";
 
 const DisciplinaModel = new mongoose.Schema({
   nome: {
@@ -31,4 +31,4 @@ const DisciplinaModel = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Disciplina", DisciplinaModel);
+export default DisciplinaModel;

@@ -1,48 +1,30 @@
 import { Request, Response } from "express";
 
-import schema from "../models/DisciplinesSchema";
 import discipline_view from "../view/discipline_view";
 import mongoose from "mongoose";
-
-const DisciplinaModel = new mongoose.Schema({
-  nome: {
-    type: String,
-    required: true,
-  },
-  objetivos: {
-    type: String,
-    required: true,
-  },
-  ementa: {
-    type: String,
-    required: true,
-  },
-  bibliografia: {
-    type: [String],
-    required: true,
-  },
-  codigo: {
-    type: Number,
-    requires: true,
-  },
-  creditos: {
-    type: Number,
-    requires: true,
-  },
-  criado: {
-    type: Date,
-    default: Date.now,
-  },
-});
+import DisciplinaModel from "../models/Discipline";
+import schema from "../models/DisciplinesSchema";
+import schemaUpdate from "../models/DisciplineUpdateSchema";
 
 const DisciplineRepository = mongoose.model("Disciplina", DisciplinaModel);
+
+interface Discipline {
+  nome: string;
+  objetivos: string;
+  ementa: string;
+  bibliografia: Array<string>;
+  codigo: number;
+  creditos: number;
+}
 
 export default {
   //GET<root>/<api>: Busca todas as disciplinas que estão cadastradas
   async getAll(request: Request, response: Response) {
     const disciplines = await DisciplineRepository.find();
-
-    return response.status(200).json(discipline_view.renderMany(disciplines));
+    if (disciplines) {
+      return response.status(200).json(discipline_view.renderMany(disciplines));
+    }
+    return response.status(204).json("Não há disciplinas cadastradas");
   },
 
   //GET<root>/<api>/<id>: Busca uma disciplina
@@ -57,6 +39,7 @@ export default {
       return response.status(404).send("Objeto não encontrado encontrado");
     }
   },
+
   //POST<root>/<api>: Registra uma nova disciplina
   async post(request: Request, response: Response) {
     const {
@@ -68,7 +51,7 @@ export default {
       creditos,
     } = request.body;
 
-    const data = {
+    const data: Discipline = {
       nome,
       objetivos,
       ementa,
@@ -104,7 +87,7 @@ export default {
       creditos,
     } = request.body;
 
-    const data = {
+    const data: Discipline = {
       nome,
       objetivos,
       ementa,
@@ -113,7 +96,7 @@ export default {
       creditos,
     };
 
-    await schema.validate(data, {
+    await schemaUpdate.validate(data, {
       abortEarly: false,
     });
 
