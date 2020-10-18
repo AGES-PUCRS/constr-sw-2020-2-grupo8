@@ -1,3 +1,3 @@
 # Trabalho Construção de Software
 
-## Alunos: Chiara Paskulin, Gustavo Possebon e Fabrício Pujol.
+## Alunos:Carlos Henrique, Chiara Paskulin, Gustavo Possebon e Fabrício Pujol.
