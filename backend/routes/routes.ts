@@ -4,7 +4,7 @@ const routes = Router();
 
 import DisciplineController from "../controllers/DisciplineController";
 
-routes.get("/disciplinas", DisciplineController.getAll);
+routes.get("/disciplinas", DisciplineController.getAllOrQuery);
 routes.get("/disciplinas/:id", DisciplineController.get);
 routes.post("/disciplinas", DisciplineController.post);
 routes.put("/disciplinas/:id", DisciplineController.put);

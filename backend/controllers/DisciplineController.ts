@@ -17,10 +17,24 @@ interface Discipline {
   creditos: number;
 }
 
+function printRequest(title: string, request: any) {
+  console.log(`\nREQUEST ${title} 👇\n`);
+  console.log(request);
+}
+
+function printResponse(response: any = {}) {
+  console.log(`\nRESPONSE 👇\n`);
+  console.log(response ? response : {});
+}
+
 export default {
-  //GET<root>/<api>: Busca todas as disciplinas que estão cadastradas
-  async getAll(request: Request, response: Response) {
-    const disciplines = await DisciplineRepository.find();
+  //GET<root>/<api>: Busca todas as disciplinas que estão cadastradas ou com os campos informados
+  async getAllOrQuery(request: Request, response: Response) {
+    printRequest("BODY", request.body);
+    printRequest("PARAMS", request.params);
+
+    const query = request.query;
+    const disciplines = await DisciplineRepository.find(query);
     if (disciplines) {
       return response.status(200).json(discipline_view.renderMany(disciplines));
     }
@@ -29,9 +43,13 @@ export default {
 
   //GET<root>/<api>/<id>: Busca uma disciplina
   async get(request: Request, response: Response) {
+    printRequest("PARAMS", request.params);
+
     const { id } = request.params;
 
     const findOne = await DisciplineRepository.findById(id);
+
+    printResponse(findOne);
 
     if (findOne) {
       return response.status(200).json(discipline_view.render(findOne));
@@ -42,6 +60,8 @@ export default {
 
   //POST<root>/<api>: Registra uma nova disciplina
   async post(request: Request, response: Response) {
+    printRequest("BODY", request.body);
+
     const {
       nome,
       objetivos,
@@ -66,6 +86,8 @@ export default {
 
     const findOne = await DisciplineRepository.findOne({ codigo: codigo });
 
+    printResponse(findOne);
+
     if (findOne) {
       return response.status(302).send("Objeto já existe");
     }
@@ -76,6 +98,9 @@ export default {
 
   //PUT<root>/<api>/id>: Atualiza a disciplina com esse id
   async put(request: Request, response: Response) {
+    printRequest("BODY", request.body);
+    printRequest("PARAMS", request.params);
+
     const { id } = request.params;
 
     const {
@@ -104,11 +129,16 @@ export default {
       new: true,
     });
 
+    printResponse(discipline);
+
     return response.status(200).json(discipline_view.render(discipline));
   },
 
   //PATCH<root>/<api>/id>: Atualiza parcialmente a disciplina com aquele id
   async patch(request: Request, response: Response) {
+    printRequest("BODY", request.body);
+    printRequest("PARAMS", request.params);
+
     const { id } = request.params;
 
     const {
@@ -133,14 +163,21 @@ export default {
       new: true,
     });
 
+    printResponse(findOne);
+
     return response.status(200).json(discipline_view.render(findOne));
   },
 
   //DELETE<root>/<api>/<id>:Deleta nova disciplina
   async delete(request: Request, response: Response) {
+    printRequest("PARAMS", request.params);
+
     const { id } = request.params;
 
     const discipline = await DisciplineRepository.findByIdAndRemove(id);
+
+    printResponse(discipline);
+
     if (discipline) {
       return response.status(200).send("Disciplina deletada com sucesso");
     }
