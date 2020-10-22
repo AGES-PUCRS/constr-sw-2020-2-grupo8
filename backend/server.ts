@@ -23,6 +23,8 @@ mongoose.connect(url, {
   },
   user: "user",
   pass: "pass",
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 //Get the default connection
