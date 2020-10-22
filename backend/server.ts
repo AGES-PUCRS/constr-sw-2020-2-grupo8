@@ -18,13 +18,12 @@ const port = 3333;
 const url = "mongodb://localhost:27017/disciplinas";
 
 mongoose.connect(url, {
-  auth: {
-    authSource: "admin",
-  },
-  user: "user",
-  pass: "pass",
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+	authSource: "admin",
+	user: "root",
+	pass: "password",
+	useCreateIndex: true,
+	useNewUrlParser: true,
+	useUnifiedTopology: true
 });
 
 //Get the default connection
