@@ -1,6 +1,16 @@
 import mongoose from "mongoose";
 
-const DisciplinaModel = new mongoose.Schema({
+export interface IDiscipline extends mongoose.Document {
+  nome: String;
+  objetivos: String;
+  escola: String;
+  bibliografia: Array<string>;
+  codigo: Number;
+  creditos: Number;
+  turma: String;
+}
+
+const disciplineSchema = new mongoose.Schema({
   nome: {
     type: String,
     required: true,
@@ -35,4 +45,4 @@ const DisciplinaModel = new mongoose.Schema({
   },
 });
 
-export default DisciplinaModel;
+export default mongoose.model<IDiscipline>("Disciplina", disciplineSchema);

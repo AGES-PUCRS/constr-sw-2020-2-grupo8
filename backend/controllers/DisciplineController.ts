@@ -2,11 +2,14 @@ import { Request, Response } from "express";
 
 import discipline_view from "../view/discipline_view";
 import mongoose from "mongoose";
-import DisciplinaModel from "../models/Discipline";
+import disciplineSchema from "../models/Discipline";
 import schema from "../models/DisciplinesSchema";
 import schemaUpdate from "../models/DisciplineUpdateSchema";
+import Axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 
-const DisciplineRepository = mongoose.model("Disciplina", DisciplinaModel);
+const serviceUrl = "http://ec2-34-238-114-89.compute-1.amazonaws.com:3000/";
+const axiosConfig: AxiosRequestConfig = { baseURL: serviceUrl };
+const apiExternal = Axios.create(axiosConfig);
 
 interface Discipline {
   nome: string;
@@ -15,6 +18,7 @@ interface Discipline {
   bibliografia: Array<string>;
   codigo: number;
   creditos: number;
+  turma: string;
 }
 
 function printRequest(title: string, request: any) {
@@ -34,7 +38,8 @@ export default {
     printRequest("PARAMS", request.params);
 
     const query = request.query;
-    const disciplines = await DisciplineRepository.find(query);
+    const disciplines = await disciplineSchema.find(query);
+
     if (disciplines) {
       return response.status(200).json(discipline_view.renderMany(disciplines));
     }
@@ -47,11 +52,18 @@ export default {
 
     const { id } = request.params;
 
-    const findOne = await DisciplineRepository.findById(id);
+    const findOne = await disciplineSchema.findById(id);
 
     printResponse(findOne);
 
     if (findOne) {
+      if (request.query.expand) {
+        const turma = await apiExternal.get(`turma/${findOne?.turma}`);
+        return response
+          .status(200)
+          .json(discipline_view.renderWithExpandsTurma(findOne, turma.data));
+      }
+
       return response.status(200).json(discipline_view.render(findOne));
     } else {
       return response.status(404).send("Objeto não encontrado encontrado");
@@ -69,6 +81,7 @@ export default {
       bibliografia,
       codigo,
       creditos,
+      turma,
     } = request.body;
 
     const data: Discipline = {
@@ -78,20 +91,21 @@ export default {
       bibliografia,
       codigo,
       creditos,
+      turma,
     };
 
     await schema.validate(data, {
       abortEarly: false,
     });
 
-    const findOne = await DisciplineRepository.findOne({ codigo: codigo });
+    const findOne = await disciplineSchema.findOne({ codigo: codigo });
 
     printResponse(findOne);
 
     if (findOne) {
       return response.status(302).send("Objeto já existe");
     }
-    const discipline = await DisciplineRepository.create(data);
+    const discipline = await disciplineSchema.create(data);
 
     return response.status(201).json(discipline_view.render(discipline));
   },
@@ -110,6 +124,7 @@ export default {
       bibliografia,
       codigo,
       creditos,
+      turma,
     } = request.body;
 
     const data: Discipline = {
@@ -119,13 +134,14 @@ export default {
       bibliografia,
       codigo,
       creditos,
+      turma,
     };
 
     await schemaUpdate.validate(data, {
       abortEarly: false,
     });
 
-    const discipline = await DisciplineRepository.findByIdAndUpdate(id, data, {
+    const discipline = await disciplineSchema.findByIdAndUpdate(id, data, {
       new: true,
     });
 
@@ -148,6 +164,7 @@ export default {
       bibliografia,
       codigo,
       creditos,
+      turma,
     } = request.body;
 
     const data = {
@@ -157,9 +174,10 @@ export default {
       bibliografia,
       codigo,
       creditos,
+      turma,
     };
 
-    const findOne = await DisciplineRepository.findByIdAndUpdate(id, data, {
+    const findOne = await disciplineSchema.findByIdAndUpdate(id, data, {
       new: true,
     });
 
@@ -174,7 +192,7 @@ export default {
 
     const { id } = request.params;
 
-    const discipline = await DisciplineRepository.findByIdAndRemove(id);
+    const discipline = await disciplineSchema.findByIdAndRemove(id);
 
     printResponse(discipline);
 
