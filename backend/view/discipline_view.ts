@@ -9,6 +9,7 @@ export default {
       bibliografia: discipline.bibliografia,
       codigo: discipline.codigo,
       creditos: discipline.creditos,
+      turma: discipline.turma,
     };
   },
 

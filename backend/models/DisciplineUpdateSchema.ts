@@ -7,6 +7,7 @@ const disciplineUpdate = Yup.object().shape({
   bibliografia: Yup.array(Yup.string().optional()).optional(),
   codigo: Yup.number().optional(),
   creditos: Yup.number().optional(),
+  turma: Yup.string().required(),
 });
 
 export default disciplineUpdate;

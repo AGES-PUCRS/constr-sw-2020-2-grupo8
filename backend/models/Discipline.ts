@@ -1,4 +1,4 @@
-import mongoose, { Document, Model, Schema } from "mongoose";
+import mongoose from "mongoose";
 
 const DisciplinaModel = new mongoose.Schema({
   nome: {
@@ -24,6 +24,10 @@ const DisciplinaModel = new mongoose.Schema({
   creditos: {
     type: Number,
     requires: true,
+  },
+  turma: {
+    type: String,
+    required: true,
   },
   criado: {
     type: Date,
