@@ -15,9 +15,9 @@ import { load } from "yamljs";
 const swaggerDocument = load("./swagger.yml");
 
 const port = 3333;
-const url = "mongodb://localhost:27017/disciplinas";
+let url = process.env.MONGO_URL || "localhost";
 
-mongoose.connect(url, {
+mongoose.connect(`mongodb://${url}/disciplinas`, {
   authSource: "admin",
   user: "root",
   pass: "password",

@@ -1,4 +1,4 @@
-import Discipline from "../models/Discipline";
+import IDiscipline from "../models/Discipline";
 
 interface ITurma {
   horario: string[];
@@ -14,7 +14,7 @@ interface ITurma {
 }
 
 export default {
-  render(discipline: typeof Discipline) {
+  render(discipline: typeof IDiscipline) {
     return {
       _id: discipline._id,
       nome: discipline.nome,
@@ -23,6 +23,7 @@ export default {
       bibliografia: discipline.bibliografia,
       codigo: discipline.codigo,
       creditos: discipline.creditos,
+      criado: discipline.criado,
       turma: discipline.turma,
     };
   },

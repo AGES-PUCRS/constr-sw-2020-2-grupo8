@@ -8,6 +8,8 @@ export interface IDiscipline extends mongoose.Document {
   codigo: Number;
   creditos: Number;
   turma: String;
+  criado: String;
+  _id: String;
 }
 
 const disciplineSchema = new mongoose.Schema({
