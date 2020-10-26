@@ -40,6 +40,8 @@ export default {
     const query = request.query;
     const disciplines = await disciplineSchema.find(query);
 
+    printResponse(disciplines);
+
     if (disciplines) {
       return response.status(200).json(discipline_view.renderMany(disciplines));
     }

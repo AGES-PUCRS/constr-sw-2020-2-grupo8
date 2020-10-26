@@ -18,9 +18,9 @@ const port = 3333;
 const url = "mongodb://localhost:27017/disciplinas";
 
 mongoose.connect(url, {
-  // authSource: "admin",
-  // user: "root",
-  // pass: "password",
+  authSource: "admin",
+  user: "root",
+  pass: "password",
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -37,7 +37,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(errorHandler);
-app.use("/api", routes);
+app.use(routes);
 app.use("/api/docs", serve, setup(swaggerDocument));
 
 app.listen(port, () => console.log(`App listening on port ${port}!`));
