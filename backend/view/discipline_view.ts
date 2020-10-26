@@ -3,18 +3,20 @@ import Discipline from "../models/Discipline";
 interface ITurma {
   horario: string[];
   alunos: string[];
+  aulas: string[];
   _id: string;
   numero: number;
   ano: number;
   semestre: number;
   sala: any;
   disciplina: any;
+  professor: string;
 }
 
 export default {
   render(discipline: typeof Discipline) {
     return {
-      id: discipline._id,
+      _id: discipline._id,
       nome: discipline.nome,
       objetivos: discipline.objetivos,
       ementa: discipline.ementa,
@@ -29,11 +31,13 @@ export default {
     return {
       horario: turma.horario,
       alunos: turma.alunos,
-      id: turma._id,
+      _id: turma._id,
       numero: turma.numero,
       ano: turma.ano,
       semestre: turma.semestre,
       sala: turma.sala,
+      aulas: turma.aulas,
+      professor: turma.professor,
     };
   },
 
@@ -47,7 +51,7 @@ export default {
 
   renderWithExpandsTurma(discipline: typeof Discipline, turma: ITurma) {
     return {
-      id: discipline._id,
+      _id: discipline._id,
       nome: discipline.nome,
       objetivos: discipline.objetivos,
       ementa: discipline.ementa,
@@ -63,7 +67,7 @@ export default {
     turmas: ITurma[]
   ) {
     return {
-      id: discipline._id,
+      _id: discipline._id,
       nome: discipline.nome,
       objetivos: discipline.objetivos,
       ementa: discipline.ementa,

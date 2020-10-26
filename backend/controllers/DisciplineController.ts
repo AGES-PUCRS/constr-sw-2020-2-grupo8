@@ -59,8 +59,9 @@ export default {
     printResponse(findOne);
 
     if (findOne) {
-      if (request.query.expand) {
+      if (request.query.expand === "turmas") {
         const turma = await apiExternal.get(`turma/${findOne?.turma}`);
+        console.log(turma.data);
         return response
           .status(200)
           .json(discipline_view.renderWithExpandsTurma(findOne, turma.data));
@@ -201,6 +202,6 @@ export default {
     if (discipline) {
       return response.status(200).send("Disciplina deletada com sucesso");
     }
-    return response.status(400).send("Disciplina não encontrada");
+    return response.status(404).send("Disciplina não encontrada");
   },
 };

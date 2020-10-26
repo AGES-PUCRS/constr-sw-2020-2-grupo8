@@ -40,4 +40,4 @@ app.use(errorHandler);
 app.use(routes);
 app.use("/api/docs", serve, setup(swaggerDocument));
 
-app.listen(port, () => console.log(`App listening on port ${port}!`));
+app.listen(port, () => console.log(`\nApp listening on port ${port}!`));
