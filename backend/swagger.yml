@@ -195,7 +195,7 @@ definitions:
         description: "Representa quantidade de créditos"
         minLength: "2"
         maxLength: "2"
-        example: 05
+        example: 55
       criado:
         type: "string"
         description: "Representa o momento de criação"
