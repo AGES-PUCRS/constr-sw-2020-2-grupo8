@@ -187,7 +187,7 @@ definitions:
         items:
           type: "string"
           example:
-              "Site sobre construção de software", "Livro sobre construção de software"
+              "Site sobre construção de software"
       codigo:
         type: "integer"
         description: "Representa o codigo"
