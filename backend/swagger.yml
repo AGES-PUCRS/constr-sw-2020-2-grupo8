@@ -165,10 +165,6 @@ definitions:
       - "criado"
       - "turma"
     properties:
-      _id: 
-        type: "string"
-        example: "5f976893b73cb40019017712"
-        description: "Representa o identificador único"
       nome:
         type: "string"
         description: "Representa o nome"
@@ -199,7 +195,7 @@ definitions:
         description: "Representa quantidade de créditos"
         minLength: "2"
         maxLength: "2"
-        example: 02
+        example: 05
       criado:
         type: "string"
         description: "Representa o momento de criação"
