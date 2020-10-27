@@ -17,9 +17,9 @@ const port = 3333;
 let url = process.env.MONGO_URL || "localhost";
 
 mongoose.connect(`mongodb://${url}/disciplinas`, {
-  // authSource: "admin",
-  // user: "root",
-  // pass: "password",
+  authSource: "admin",
+  user: "root",
+  pass: "password",
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true,
