@@ -57,7 +57,7 @@ paths:
             $ref: "#/definitions/Disciplina"
         "302":
           description: "Objeto já existente"
-  /disciplinas/{disciplinaid}:
+  /disciplinas/{id}:
     get:
       tags:
         - "disciplina"
@@ -69,7 +69,7 @@ paths:
       produces:
         - "application/json"
       parameters:
-        - name: "disciplinaid"
+        - name: "id"
           in: "path"
           description: "Id da disciplina que deseja buscar"
           required: true
