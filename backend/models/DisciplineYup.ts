@@ -5,7 +5,7 @@ const disciplineYup = yup.object().shape({
   objetivos: yup.string().required().min(10).max(300),
   ementa: yup.string().required().min(10).max(300),
   bibliografia: yup
-    .array(yup.string().required().min(10).max(50))
+    .array(yup.string().required().min(10).max(300))
     .required()
     .min(1)
     .max(10),
