@@ -85,20 +85,19 @@ paths:
       description: "Atualiza a disciplina com esse id"
       operationId: "put"
       consumes:
-      - "application/json"
+        - "application/json"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - name: "id"
-        in: "path"
-        required: true
-        type: string
-        format: uuid
-      - in: "body"
-        name: "body"
-        required: true
-        schema:
-          $ref: "#/definitions/Disciplina"
+        - name: "id"
+          in: "path"
+          required: true
+          type: string
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Disciplina"
       responses:
         "200":
           description: "Ok"
@@ -106,24 +105,23 @@ paths:
           description: "Objeto não encontrado"
     patch:
       tags:
-      - "disciplina"
+        - "disciplina"
       summary: "Atualiza parcialmente uma disciplina"
       operationId: "patch"
       consumes:
-      - "application/json"
+        - "application/json"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - name: "id"
-        in: "path"
-        required: true
-        type: string
-        format: uuid
-      - in: "body"
-        name: "body"
-        required: true
-        schema:
-          $ref: "#/definitions/Content"
+        - name: "id"
+          in: "path"
+          required: true
+          type: string
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/Content"
       responses:
         "200":
           description: "Ok"
@@ -136,13 +134,12 @@ paths:
       description: "Deleta uma disciplina pelo seu id"
       operationId: "delete"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - name: "id"
-        in: "path"
-        required: true
-        type: string
-         format: uuid
+        - name: "id"
+          in: "path"
+          required: true
+          type: string
       responses:
         "200":
           description: "Objeto excluido com sucesso"
@@ -182,8 +179,7 @@ definitions:
         description: "Representa um array de strings das bibliografias"
         items:
           type: "string"
-          example:
-              "Site sobre construção de software"
+          example: "Site sobre construção de software"
       codigo:
         type: "integer"
         description: "Representa o codigo"
@@ -200,7 +196,7 @@ definitions:
         type: "string"
         description: "Representa o momento de criação"
         example: "2020-10-27T00:23:47.223Z"
-      turma: 
+      turma:
         type: "string"
         description: "Representa o id da turma"
         example: "5f8e12b871fc9404c6a3d288"
