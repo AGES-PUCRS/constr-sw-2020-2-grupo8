@@ -74,7 +74,6 @@ paths:
           description: "Id da disciplina que deseja buscar"
           required: true
           type: string
-          format: uuid
       responses:
         "200":
           schema:
