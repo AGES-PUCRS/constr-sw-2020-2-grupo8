@@ -23,12 +23,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{localhost}}/api/disciplinas",
+					"raw": "{{localhost}}/disciplinas",
 					"host": [
 						"{{localhost}}"
 					],
 					"path": [
-						"api",
 						"disciplinas"
 					]
 				}
@@ -53,14 +52,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{localhost}}/api/disciplinas/5f8c798581d64301a0f7d25e",
+					"raw": "{{localhost}}/disciplinas/5f975a26392f3108189ce4dc",
 					"host": [
 						"{{localhost}}"
 					],
 					"path": [
-						"api",
 						"disciplinas",
-						"5f8c798581d64301a0f7d25e"
+						"5f975a26392f3108189ce4dc"
 					]
 				}
 			},
@@ -73,7 +71,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\": \"Construção de Software\",\r\n    \"objetivos\": \"Conhecimento em Construção de Software\",\r\n    \"ementa\": \"Ementa exemplo\",\r\n    \"bibliografia\": [\r\n        \"bibliografia 1\",\r\n        \"bibliografia 2\"\r\n    ],\r\n    \"codigo\": 12345,\r\n    \"creditos\": 4\r\n}",
+					"raw": "{\r\n    \"nome\": \"Construção de Software\",\r\n    \"objetivos\": \"Construir software com as melhores práticas\",\r\n    \"ementa\": \"Ementa de exemplo\",\r\n    \"bibliografia\": [\r\n        \"bibliografia de exemplo 1\",\r\n        \"bibliografia de exemplo 2\"\r\n    ],\r\n    \"turma\": \"5f9375c46c782394b6e84cc0\",\r\n    \"codigo\": 11222,\r\n    \"creditos\": 61\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -81,12 +79,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{localhost}}/api/disciplinas",
+					"raw": "{{localhost}}/disciplinas",
 					"host": [
 						"{{localhost}}"
 					],
 					"path": [
-						"api",
 						"disciplinas"
 					]
 				}
@@ -100,7 +97,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome\": \"Alterando nome\",\r\n    \"objetivos\": \"Conhecimento em Construção de Software\",\r\n    \"ementa\": \"Testando alteracao\",\r\n    \"bibliografia\": [\r\n        \"bibliografia 1\",\r\n        \"bibliografia 2\"\r\n    ],\r\n    \"codigo\": 12345,\r\n    \"creditos\": 4\r\n}",
+					"raw": "{\r\n        \"id\": \"5f974e9d95d8d70317ea02b9\",\r\n        \"nome\": \"Construção de Software\",\r\n        \"objetivos\": \"Construir software com as melhores práticas\",\r\n        \"ementa\": \"aaaaa21212\",\r\n        \"bibliografia\": [\r\n            \"bibliografia de exemplo 1\",\r\n            \"bibliografia de exemplo 2\"\r\n        ],\r\n        \"codigo\": 11111,\r\n        \"creditos\": 45,\r\n        \"turma\": \"5f9375c46c782394b6e84cc0\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -108,14 +105,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{localhost}}/api/disciplinas/5f8c798581d64301a0f7d25e",
+					"raw": "{{localhost}}/disciplinas/5f988f4e4c53d40d2c5fe569",
 					"host": [
 						"{{localhost}}"
 					],
 					"path": [
-						"api",
 						"disciplinas",
-						"5f8c798581d64301a0f7d25e"
+						"5f988f4e4c53d40d2c5fe569"
 					]
 				}
 			},
@@ -128,7 +124,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n    \"nome\": \"Construção de Software\",\r\n    \"objetivos\": \"Construir software com as melhores práticas\",\r\n    \"bibliografia\": [\r\n        \"bibliografia de exemplo 1\",\r\n        \"bibliografia de exemplo 2\"\r\n    ],\r\n    \"turma\": \"5f9375c46c782394b6e84cc0\",\r\n    \"codigo\": 45159,\r\n    \"creditos\": 41\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -136,13 +132,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{localhost}}/api/disciplinas",
+					"raw": "{{localhost}}/disciplinas/5f988f4e4c53d40d2c5fe569",
 					"host": [
 						"{{localhost}}"
 					],
 					"path": [
-						"api",
-						"disciplinas"
+						"disciplinas",
+						"5f988f4e4c53d40d2c5fe569"
 					]
 				}
 			},
@@ -154,14 +150,61 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{localhost}}/api/disciplinas/5f8c815713c440054d412ec3",
+					"raw": "{{localhost}}/disciplinas/5f975abe392f3108189ce4dd",
 					"host": [
 						"{{localhost}}"
 					],
 					"path": [
-						"api",
 						"disciplinas",
-						"5f8c815713c440054d412ec3"
+						"5f975abe392f3108189ce4dd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca por query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/disciplinas/?ementa=aaaaa",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"disciplinas",
+						""
+					],
+					"query": [
+						{
+							"key": "ementa",
+							"value": "aaaaa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca pelo id com expand",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/disciplinas/5f975a26392f3108189ce4dc?expand=turmas",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"disciplinas",
+						"5f975a26392f3108189ce4dc"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "turmas"
+						}
 					]
 				}
 			},

@@ -163,6 +163,7 @@ definitions:
       - "bibliografia"
       - "codigo"
       - "creditos"
+      - "criado"
       - "turma"
     properties:
       nome:
@@ -200,6 +201,10 @@ definitions:
           minLength: 1
           maxLength: 1
           example: 4
+      criado:
+        type: "string"
+        description: "Representa o momento de criação"
+        example: "2020-10-27T00:23:47.223Z"
       turma: 
         type: "string"
         description: "Representa o id da turma"

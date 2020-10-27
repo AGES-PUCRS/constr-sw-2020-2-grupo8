@@ -1,15 +1,15 @@
 import mongoose from "mongoose";
 
 export interface IDiscipline extends mongoose.Document {
-  nome: String;
-  objetivos: String;
-  escola: String;
-  bibliografia: Array<string>;
-  codigo: Number;
-  creditos: Number;
-  turma: String;
-  criado: String;
-  _id: String;
+  _id: string;
+  nome?: string;
+  objetivos?: string;
+  ementa?: string;
+  bibliografia?: Array<string>;
+  codigo?: number;
+  creditos?: number;
+  criado?: string;
+  turma?: string;
 }
 
 const disciplineSchema = new mongoose.Schema({
