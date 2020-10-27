@@ -42,7 +42,7 @@ export default {
       }
       return response.status(204).json("Não há disciplinas cadastradas");
     } catch (error) {
-      return response.status(500).send("Falha no servidor");
+      return response.status(500).send("Falha no servidor:" + error);
     }
   },
 
@@ -75,7 +75,7 @@ export default {
         return response.status(404).send("Objeto não encontrado encontrado");
       }
     } catch (error) {
-      return response.status(500).send("Falha no servidor");
+      return response.status(500).send("Falha no servidor:" + error);
     }
   },
 
@@ -134,7 +134,7 @@ export default {
 
       return response.status(201).json(discipline_view.render(discipline));
     } catch (error) {
-      return response.status(500).send("Falha no servidor");
+      return response.status(500).send("Falha no servidor:" + error);
     }
   },
 
@@ -195,7 +195,7 @@ export default {
 
       return response.status(200).json(discipline_view.render(discipline));
     } catch (error) {
-      return response.status(500).send("Falha no servidor");
+      return response.status(500).send("Falha no servidor:" + error);
     }
   },
 
@@ -256,7 +256,7 @@ export default {
 
       return response.status(200).json(discipline_view.render(findOne));
     } catch (error) {
-      return response.status(500).send("Falha no servidor");
+      return response.status(500).send("Falha no servidor:" + error);
     }
   },
 
@@ -276,7 +276,7 @@ export default {
       }
       return response.status(404).send("Disciplina não encontrada");
     } catch (error) {
-      return response.status(500).send("Falha no servidor");
+      return response.status(500).send("Falha no servidor:" + error);
     }
   },
 };

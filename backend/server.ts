@@ -1,6 +1,5 @@
 import express from "express";
 
-import errorHandler from "./errors/handler";
 import routes from "./routes/routes";
 
 /* Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Mongoose supports both promises and callbacks. */
