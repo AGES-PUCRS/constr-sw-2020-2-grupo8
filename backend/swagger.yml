@@ -157,6 +157,7 @@ definitions:
   Disciplina:
     type: "object"
     required:
+      - "_id"
       - "nome"
       - "objetivos"
       - "ementa"
@@ -166,6 +167,10 @@ definitions:
       - "criado"
       - "turma"
     properties:
+      _id: 
+        type: "string"
+        example: "5f976893b73cb40019017712"
+        description: "Representa o identificador único"
       nome:
         type: "string"
         description: "Representa o nome"
