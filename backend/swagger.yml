@@ -156,7 +156,6 @@ definitions:
   Disciplina:
     type: "object"
     required:
-      - "_id"
       - "nome"
       - "objetivos"
       - "ementa"
