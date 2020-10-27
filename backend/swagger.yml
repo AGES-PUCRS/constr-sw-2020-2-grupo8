@@ -193,13 +193,13 @@ definitions:
         description: "Representa o codigo"
         minLength: "5"
         maxLength: "5"
-        example: "46504"
+        example: 46504
       creditos:
         type: "integer"
         description: "Representa quantidade de créditos"
         minLength: "2"
         maxLength: "2"
-        example: "02"
+        example: 02
       criado:
         type: "string"
         description: "Representa o momento de criação"
