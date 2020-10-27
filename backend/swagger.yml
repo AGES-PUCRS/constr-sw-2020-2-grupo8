@@ -179,12 +179,11 @@ definitions:
         example: "Visão geral sobre os fundamentos de construção de software. Estudo de conceitos relacionados à reutilização de software.  Entendimento e exploração dos conceitos de frameworks, componentes e linhas de produtos de software. Conhecimento das arquiteturas dirigidas por modelos. Desenvolvimento e uso de ferramentas de reutilização de software."
       bibliografia:
         type: "array"
-        description: "Representa um array das bibliografias"
+        description: "Representa um array de strings das bibliografias"
         items:
           type: "string"
           example:
-            [
-              "Site sobre construção de software", "Livro sobre construção de software" ]
+              "Site sobre construção de software", "Livro sobre construção de software"
       codigo:
         type: "integer"
         description: "Representa o codigo"
