@@ -1,0 +1,500 @@
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  body: {},
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-28T23:58:51.538Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  response: [],
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-28T23:58:51.570Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  method: 'POST',
+  url: '/disciplinas',
+  body: {
+    nome: 'Construção de Software',
+    objetivos: 'Construir software com as melhores práticas',
+    ementa: 'Ementa de exemplo',
+    bibliografia: [ 'bibliografia de exemplo 1', 'bibliografia de exemplo 2' ],
+    turma: '5f9375c46c782394b6e84cc0',
+    codigo: 11222,
+    creditos: 61
+  },
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:00:01.985Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  method: 'POST',
+  url: '/disciplinas',
+  response: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:00:02.100Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Registra uma nova disciplina',
+  method: 'POST',
+  url: '/disciplinas',
+  body: {
+    nome: 'Construção de Software',
+    objetivos: 'Construir software com as melhores práticas',
+    ementa: 'Ementa de exemplo',
+    bibliografia: [ 'bibliografia de exemplo 1', 'bibliografia de exemplo 2' ],
+    turma: '5f9375c46c782394b6e84cc0',
+    codigo: 11222,
+    creditos: 61
+  },
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:05:11.035Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Registra uma nova disciplina',
+  method: 'POST',
+  url: '/disciplinas',
+  response: {
+    bibliografia: [ 'bibliografia de exemplo 1', 'bibliografia de exemplo 2' ],
+    _id: 5f9a0602bad068097e5f5951,
+    nome: 'Construção de Software',
+    objetivos: 'Construir software com as melhores práticas',
+    ementa: 'Ementa de exemplo',
+    codigo: 11222,
+    creditos: 61,
+    turma: '5f9375c46c782394b6e84cc0',
+    criado: 2020-10-29T00:00:02.193Z,
+    __v: 0
+  },
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:05:11.397Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Registra uma nova disciplina',
+  method: 'POST',
+  url: '/disciplinas',
+  body: {
+    nome: 'Construção de Software',
+    objetivos: 'Construir software com as melhores práticas',
+    ementa: 'Ementa de exemplo',
+    bibliografia: [ 'bibliografia de exemplo 1', 'bibliografia de exemplo 2' ],
+    turma: '5f9375c46c782394b6e84cc0',
+    codigo: 11222,
+    creditos: 61
+  },
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:17:28.355Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Registra uma nova disciplina',
+  method: 'POST',
+  url: '/disciplinas',
+  response: {
+    bibliografia: [ 'bibliografia de exemplo 1', 'bibliografia de exemplo 2' ],
+    _id: 5f9a0602bad068097e5f5951,
+    nome: 'Construção de Software',
+    objetivos: 'Construir software com as melhores práticas',
+    ementa: 'Ementa de exemplo',
+    codigo: 11222,
+    creditos: 61,
+    turma: '5f9375c46c782394b6e84cc0',
+    criado: 2020-10-29T00:00:02.193Z,
+    __v: 0
+  },
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:17:28.536Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  body: {},
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:17:30.963Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  response: [
+    {
+      bibliografia: [ 'bibliografia de exemplo 1', 'bibliografia de exemplo 2' ],
+      _id: 5f9a0602bad068097e5f5951,
+      nome: 'Construção de Software',
+      objetivos: 'Construir software com as melhores práticas',
+      ementa: 'Ementa de exemplo',
+      codigo: 11222,
+      creditos: 61,
+      turma: '5f9375c46c782394b6e84cc0',
+      criado: 2020-10-29T00:00:02.193Z,
+      __v: 0
+    }
+  ],
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:17:31.075Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Deleta uma disciplina',
+  method: 'DELETE',
+  url: '/disciplinas/5f9a0602bad068097e5f5951',
+  body: {},
+  params: { id: '5f9a0602bad068097e5f5951' },
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:17:45.148Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Deleta uma disciplina',
+  method: 'DELETE',
+  url: '/disciplinas/5f9a0602bad068097e5f5951',
+  response: {
+    bibliografia: [ 'bibliografia de exemplo 1', 'bibliografia de exemplo 2' ],
+    _id: 5f9a0602bad068097e5f5951,
+    nome: 'Construção de Software',
+    objetivos: 'Construir software com as melhores práticas',
+    ementa: 'Ementa de exemplo',
+    codigo: 11222,
+    creditos: 61,
+    turma: '5f9375c46c782394b6e84cc0',
+    criado: 2020-10-29T00:00:02.193Z,
+    __v: 0
+  },
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:17:45.299Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  body: {},
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:19:22.114Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  response: [],
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:19:22.152Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  body: {},
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:19:52.733Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  response: [],
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:19:52.834Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  body: {},
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:20:00.203Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  response: [],
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:20:00.240Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  body: {},
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:20:26.771Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  response: [],
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:20:26.788Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  body: {},
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:20:40.347Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  response: [],
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:20:40.435Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Registra uma nova disciplina',
+  method: 'POST',
+  url: '/disciplinas',
+  body: {
+    nome: 'Construção de Software',
+    objetivos: 'Construir software com as melhores práticas',
+    ementa: 'Ementa de exemplo',
+    bibliografia: [ 'bibliografia de exemplo 1', 'bibliografia de exemplo 2' ],
+    turma: '5f9375c46c782394b6e84cc0',
+    codigo: 11222,
+    creditos: 61
+  },
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:23:07.235Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Registra uma nova disciplina',
+  method: 'POST',
+  url: '/disciplinas',
+  response: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:23:07.292Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas por id',
+  method: 'GET',
+  url: '/disciplinas/5f9a0b6b5c01d50abd759d30?expand=turmas',
+  body: {},
+  params: { id: '5f9a0b6b5c01d50abd759d30' },
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:23:18.811Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas por id',
+  method: 'GET',
+  url: '/disciplinas/5f9a0b6b5c01d50abd759d30?expand=turmas',
+  response: {
+    _id: 5f9a0b6b5c01d50abd759d30,
+    nome: 'Construção de Software',
+    objetivos: 'Construir software com as melhores práticas',
+    ementa: 'Ementa de exemplo',
+    bibliografia: ["bibliografia de exemplo 1","bibliografia de exemplo 2"],
+    codigo: 11222,
+    creditos: 61,
+    criado: 2020-10-29T00:23:07.330Z,
+    turma: {
+      horario: [ '2Jk', '6JK' ],
+      alunos: [ '5f9755331f05b4002a07d9f4', '5f9755971f05b4002a07d9f5' ],
+      _id: '5f9375c46c782394b6e84cc0',
+      numero: 127,
+      ano: 2020,
+      semestre: 2,
+      sala: '5f865e70ef75029d3c4a6197',
+      aulas: [ '5f8e0e68dd385b00119407fa', '5f91fca7dd385b00119407fb' ],
+      professor: '5f97525d4c1d013d41ff5b73'
+    }
+  },
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:23:19.257Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas por id',
+  method: 'GET',
+  url: '/disciplinas/5f9a0b6b5c01d50abd759d30',
+  body: {},
+  params: { id: '5f9a0b6b5c01d50abd759d30' },
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:23:43.594Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas por id',
+  method: 'GET',
+  url: '/disciplinas/5f9a0b6b5c01d50abd759d30',
+  response: {
+    bibliografia: [ 'bibliografia de exemplo 1', 'bibliografia de exemplo 2' ],
+    _id: 5f9a0b6b5c01d50abd759d30,
+    nome: 'Construção de Software',
+    objetivos: 'Construir software com as melhores práticas',
+    ementa: 'Ementa de exemplo',
+    codigo: 11222,
+    creditos: 61,
+    turma: '5f9375c46c782394b6e84cc0',
+    criado: 2020-10-29T00:23:07.330Z,
+    __v: 0
+  },
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:23:43.636Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  body: {},
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:25:38.903Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  response: [
+    {
+      bibliografia: [ 'bibliografia de exemplo 1', 'bibliografia de exemplo 2' ],
+      _id: 5f9a0b6b5c01d50abd759d30,
+      nome: 'Construção de Software',
+      objetivos: 'Construir software com as melhores práticas',
+      ementa: 'Ementa de exemplo',
+      codigo: 11222,
+      creditos: 61,
+      turma: '5f9375c46c782394b6e84cc0',
+      criado: 2020-10-29T00:23:07.330Z,
+      __v: 0
+    }
+  ],
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:25:39.159Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  body: {},
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:29:58.497Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  response: [
+    {
+      bibliografia: [ 'bibliografia de exemplo 1', 'bibliografia de exemplo 2' ],
+      _id: 5f9a0b6b5c01d50abd759d30,
+      nome: 'Construção de Software',
+      objetivos: 'Construir software com as melhores práticas',
+      ementa: 'Ementa de exemplo',
+      codigo: 11222,
+      creditos: 61,
+      turma: '5f9375c46c782394b6e84cc0',
+      criado: 2020-10-29T00:23:07.330Z,
+      __v: 0
+    }
+  ],
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:29:58.548Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  body: {},
+  params: {},
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:31:38.346Z'
+}
+{
+  logger: 'disciplina-logger',
+  level: 'info',
+  action: 'Buscar disciplinas com query ou não',
+  method: 'GetAllOrQuery',
+  url: '/disciplinas',
+  response: [
+    {
+      _id: 5f9a0b6b5c01d50abd759d30,
+      nome: 'Construção de Software',
+      objetivos: 'Construir software com as melhores práticas',
+      ementa: 'Ementa de exemplo',
+      bibliografia: ["bibliografia de exemplo 1","bibliografia de exemplo 2"],
+      codigo: 11222,
+      creditos: 61,
+      criado: 2020-10-29T00:23:07.330Z,
+      turma: '5f9375c46c782394b6e84cc0'
+    }
+  ],
+  controller: 'disciplina-controller',
+  timestamp: '2020-10-29T00:31:38.401Z'
+}
