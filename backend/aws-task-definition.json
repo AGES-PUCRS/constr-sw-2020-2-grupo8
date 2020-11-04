@@ -1,0 +1,23 @@
+{
+	"containerDefinitions": [
+			{
+					"portMappings": [
+							{
+									"hostPort": 3333,
+									"protocol": "tcp",
+									"containerPort": 3333
+							}
+					],
+					"cpu": 10,
+					"memory": 300,
+					"name": "disciplinas:latest"
+			}
+	],
+	"family": "start-grupo8-api-disciplinas",
+	"inferenceAccelerators": [],
+	"volumes": [],
+	"placementConstraints": [],
+	"memory": null,
+	"cpu": null,
+	"tags": []
+}
