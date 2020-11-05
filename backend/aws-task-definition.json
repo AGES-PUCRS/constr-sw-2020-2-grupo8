@@ -10,7 +10,7 @@
 					],
 					"cpu": 10,
 					"memory": 300,
-					"name": "disciplinas:latest"
+					"name": "disciplinas"
 			}
 	],
 	"family": "start-grupo8-api-disciplinas",
