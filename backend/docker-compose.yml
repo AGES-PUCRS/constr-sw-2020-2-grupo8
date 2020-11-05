@@ -29,6 +29,7 @@ services:
       - mongo-compose-network
 
   disciplinas:
+    build: ./
     image: disciplinas:latest
     environment:
       NODE_ENV: production
