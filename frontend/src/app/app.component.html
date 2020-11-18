@@ -1,0 +1,55 @@
+
+
+
+<header>
+  <a href="index.html" class="header-logo">pucrs</a>
+  <nav>
+    <ul>
+      <li><a href="#">PROFESSORES</a></li>
+      <li><a href="serv.html">ALUNOS</a></li>
+      <li><a href="#">TURMAS</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+
+
+
+
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="professor">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Professor </th>
+    <td mat-cell *matCellDef="let element"> {{element.professor}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="formacao">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Formação </th>
+    <td mat-cell *matCellDef="let element"> {{element.formacao}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="turmas">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Qtd. Turmas </th>
+    <td mat-cell *matCellDef="let element"> {{element.turmas}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="turno">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Turno </th>
+    <td mat-cell *matCellDef="let element"> {{element.turno}} </td>
+  </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
