@@ -17,7 +17,7 @@
 
 
 
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
 
   <!-- Position Column -->
   <ng-container matColumnDef="id">
@@ -50,6 +50,8 @@
 
 
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<button class="add">+</button>
