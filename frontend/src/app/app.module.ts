@@ -35,10 +35,16 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { AddFormComponent } from './add-form/add-form.component';
+import { DeleteFormComponent } from './delete-form/delete-form.component';
+import { EditFormComponent } from './edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AddFormComponent,
+    DeleteFormComponent,
+    EditFormComponent,
   ],
   imports: [
     BrowserModule,

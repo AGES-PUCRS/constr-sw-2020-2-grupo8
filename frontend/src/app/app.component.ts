@@ -4,6 +4,10 @@ import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import { HttpClient } from '@angular/common/http';
 import {MatIcon} from "@angular/material/icon";
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {AddFormComponent} from "./add-form/add-form.component";
+import {DeleteFormComponent} from "./delete-form/delete-form.component";
+import {EditFormComponent} from "./edit-form/edit-form.component";
 
 export interface Content {
 
@@ -24,10 +28,15 @@ export interface Content {
 })
 
 export class AppComponent {
+
   displayedColumns = ["cdMatricula", "nome", "email", "numTelefone", "escola", "edit", "delete"];
+  dataSource: MatTableDataSource<Content>;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private dialog: MatDialog) {
   }
 
   ngAfterViewInit() {
@@ -41,5 +50,30 @@ export class AppComponent {
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  }
+
+  delete(){
+    const dialogConfig= new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="60%";
+    this.dialog.open(DeleteFormComponent);
+  }
+
+  add(){
+    const dialogConfig= new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="60%";
+    this.dialog.open(AddFormComponent);
+  }
+
+  edit(){
+    const dialogConfig= new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="60%";
+    this.dialog.open(EditFormComponent);
   }
 }
