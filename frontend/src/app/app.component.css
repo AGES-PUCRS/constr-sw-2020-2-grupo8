@@ -1,19 +1,45 @@
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
+.search {
+
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 30%;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: black;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: black;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: black;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: black;
+}
 
 .mat-table {
-  width: 80%;
-  margin-left: 10%;
-  margin-top: 5%;
-  background: white;
+  overflow: auto;
+  max-height: 500px;
 }
 
-
-th.mat-header-cell{
-  color: black;
+table {
+  width: 100%;
 }
 
-.mat-cell{
-  color: black;
+.container {
+  margin: 30px 30px 30px 30px;
 }
 
 header {
@@ -29,47 +55,53 @@ header .header-logo {
   display: block;
   margin: 20px 0;
   text-align: left;
-  padding: 0px 20px 0px 40px;
+  padding: 0 20px 0 40px;
   border-right: 3px solid #111111;
   float: left;
   line-height: 38px;
-  font-family: Black;
+  font-family: Black, serif;
   color: #111111;
 }
 
 
 header nav ul {
   display: block;
-  margin: 10px 0px 0px 20px;
+  margin: 10px 0 0 20px;
   width: fit-content;
-  float: left; }
+  float: left;
+}
 
 header nav ul li {
   height: 100%;
   display: inline-block;
   float: left;
   list-style: none;
-  padding: 0 16px; }
+  padding: 0 16px;
+}
 
 header nav ul li a {
   font-size: 16px;
   color: #111111;
   line-height: 60px;
-  color: #111111;
-  font-family: Black;
+  font-family: Black, serif;
 }
 
 header nav ul li:hover {
   background-color: lightgray;
-  transition: 0.5s; }
+  transition: 0.5s;
+}
 
 header .header-login:hover {
   background-color: white;
-  transition: 0.5s; }
+  transition: 0.5s;
+}
+
+.btt{
+  display: flex;
+  float: right;
+}
 
 .add{
-  position: relative;
-  left: 84%;
   width: 80px;
   height: 80px;
   background: #3d92ea;
@@ -77,5 +109,13 @@ header .header-login:hover {
   font-size: 50px;
   border-style: none;
   color: #FFFFFF;
-  bottom: 4%;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
+  padding-right: 10px;
+  padding-left: 0px !important;
+}
+
+mat-cell:last-of-type, mat-header-cell:last-of-type, mat-footer-cell:last-of-type{
+  padding-right: 0px !important;
 }

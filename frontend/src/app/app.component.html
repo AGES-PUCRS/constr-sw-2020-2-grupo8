@@ -27,25 +27,40 @@
   </mat-form-field>
   <mat-table [dataSource]="dataSource" matSort>
 
-    <ng-container matColumnDef="id">
+    <ng-container matColumnDef="cdMatricula">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
-        ID Conteúdo
+        Matricula
       </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row._id}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.cdMatricula}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="nome">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
         Nome
       </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.nome}} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="description">
+    <ng-container matColumnDef="email">
       <mat-header-cell *matHeaderCellDef mat-sort-header>
-        Descricao
+        Email
       </mat-header-cell>
-      <mat-cell *matCellDef="let row"> {{row.description}} </mat-cell>
+      <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="numTelefone">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        Telefone
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.numTelefone}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="escola">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        Escola
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.escola}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="edit">
