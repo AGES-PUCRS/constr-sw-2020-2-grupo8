@@ -53,12 +53,13 @@ export class AppComponent {
     this.dataSource.filter = filterValue;
   }
 
-  delete(){
+  delete(data: any){
     const dialogConfig= new MatDialogConfig();
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;
     dialogConfig.width="60%";
-    this.dialog.open(DeleteFormComponent);
+    // @ts-ignore
+    this.dialog.open(DeleteFormComponent, {data});
   }
 
   add(){
@@ -69,11 +70,12 @@ export class AppComponent {
     this.dialog.open(AddFormComponent);
   }
 
-  edit(){
+  edit(data: any){
     const dialogConfig= new MatDialogConfig();
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;
     dialogConfig.width="60%";
-    this.dialog.open(EditFormComponent);
+    // @ts-ignore
+    this.dialog.open(EditFormComponent, {data});
   }
 }

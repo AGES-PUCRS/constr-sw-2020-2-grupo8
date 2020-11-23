@@ -3,10 +3,11 @@
 html, body { height: 100%; width: 100% }
 body {
 
-  background: url("assets/background.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #F0F0F5;
+  margin: 0;
+  font-family: Roboto,
+  "Helvetica Neue",
+  sans-serif;
+  background: #F0F0F5 url("assets/background.svg") no-repeat left bottom;
 }
 
 section{
