@@ -1,0 +1,19 @@
+span{
+    font-size: 30px;
+}
+
+.nao{
+    right: 200px;
+    top: 350px;
+    height: 80px;
+    width: 150px;
+    font-size: 50px;
+}
+
+.sim{
+    left: 280px;
+    top: 270px;
+    height: 80px;
+    width: 150px;
+    font-size: 50px;
+}

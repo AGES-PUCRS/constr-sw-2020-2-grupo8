@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>Informações do Professor</h1>
+<div mat-dialog-content class="editBody">
+
+    <div class="form">
+        <label>
+            <span>Nome: {{data.nome}}</span>
+        </label>
+    </div>
+
+    <div class="form">
+        <label>
+            <span>Matricula: {{data.cdMatricula}}</span>
+        </label>
+    </div>
+
+    <div class="form">
+        <label>
+            <span>Escola: {{data.escola}}</span>
+        </label>
+    </div>
+
+    <div class="form">
+        <label>
+            <span>Email: {{data.email}}</span>
+        </label>
+    </div>
+
+    <div class="form">
+        <label>
+            <span>Número de Telefone: {{data.numTelefone}}</span>
+        </label>
+    </div>
+
+    <div class="form">
+        <label>
+            <span>Id: {{data.id}}</span>
+        </label>
+    </div>
+
+    <div class="form">
+        <label>
+            <span>Ativo: {{data.isAtivo}}</span>
+        </label>
+    </div>
+
+    <button mat-raised-button color="primary" class="cancelar" (click)="close()" >FECHAR</button>
+</div>

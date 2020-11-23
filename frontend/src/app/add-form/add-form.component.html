@@ -1,27 +1,55 @@
-<div class="example-container">
-    <mat-form-field appearance="fill">
-        <mat-label>Nome</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Escola</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>email</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Número do Telefone</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Matricula</mat-label>
-        <input matInput>
-    </mat-form-field>
+<h1 mat-dialog-title>Editar conteúdo</h1>
+<div mat-dialog-content class="editBody">
 
-    <button mat-raised-button color="primary" >CANCELAR</button>
-    <button mat-raised-button color="primary" >ADICIONAR</button>
+    <div class="form">
+        <label>
+            <span>Nome</span>
+            <input (input)="nome=$event.target.value" value="{{data.nome}}">
+        </label>
+    </div>
 
+    <div class="form">
+        <label>
+            <span>Matricula</span>
+            <input (input)="cdMatricula=$event.target.value" value="{{data.cdMatricula}}">
+        </label>
+    </div>
 
+    <div class="form">
+        <label>
+            <span>Escola</span>
+            <input (input)="escola=$event.target.value" value="{{data.escola}}">
+        </label>
+    </div>
+
+    <div class="form">
+        <label>
+            <span>Email</span>
+            <input (input)="email=$event.target.value" value="{{data.email}}">
+        </label>
+    </div>
+
+    <div class="form">
+        <label>
+            <span>Número de Telefone</span>
+            <input (input)="numTelefone=$event.target.value" value="{{data.numTelefone}}">
+        </label>
+    </div>
+
+    <div class="form">
+        <label>
+            <span>Id</span>
+            <input (input)="id=$event.target.value" value="{{data.id}}">
+        </label>
+    </div>
+
+    <div class="form">
+        <label>
+            <span>Ativo</span>
+            <input (input)="isAtivo=$event.target.value" value="{{data.isAtivo}}">
+        </label>
+    </div>
+
+    <button mat-raised-button color="primary" class="cancelar" (click)="close()" >CANCELAR</button>
+    <button mat-raised-button color="primary" class="salvar" (click)="submit()" >SALVAR</button>
 </div>

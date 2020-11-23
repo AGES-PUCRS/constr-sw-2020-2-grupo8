@@ -8,6 +8,7 @@ import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {AddFormComponent} from "./add-form/add-form.component";
 import {DeleteFormComponent} from "./delete-form/delete-form.component";
 import {EditFormComponent} from "./edit-form/edit-form.component";
+import {ViewFormComponent} from "./view-form/view-form.component";
 
 export interface Content {
 
@@ -29,7 +30,7 @@ export interface Content {
 
 export class AppComponent {
 
-  displayedColumns = ["cdMatricula", "nome", "email", "numTelefone", "escola", "edit", "delete"];
+  displayedColumns = ["cdMatricula", "nome", "email", "numTelefone", "escola", "view", "edit", "delete"];
   dataSource: MatTableDataSource<Content>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -78,4 +79,14 @@ export class AppComponent {
     // @ts-ignore
     this.dialog.open(EditFormComponent, {data});
   }
+
+  view(data: any){
+    const dialogConfig= new MatDialogConfig();
+    dialogConfig.disableClose=true;
+    dialogConfig.autoFocus=true;
+    dialogConfig.width="60%";
+    // @ts-ignore
+    this.dialog.open(ViewFormComponent, {data});
+  }
+
 }

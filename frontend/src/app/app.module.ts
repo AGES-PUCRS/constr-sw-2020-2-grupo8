@@ -38,6 +38,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import { AddFormComponent } from './add-form/add-form.component';
 import { DeleteFormComponent } from './delete-form/delete-form.component';
 import { EditFormComponent } from './edit-form/edit-form.component';
+import { ViewFormComponent } from './view-form/view-form.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { EditFormComponent } from './edit-form/edit-form.component';
     AddFormComponent,
     DeleteFormComponent,
     EditFormComponent,
+    ViewFormComponent,
   ],
   imports: [
     BrowserModule,

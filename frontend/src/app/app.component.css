@@ -107,14 +107,6 @@ header .header-login:hover {
   color: #FFFFFF;
 }
 
-th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
-  padding-right: 10px;
-  padding-left: 0px !important;
-}
-
-mat-cell:last-of-type, mat-header-cell:last-of-type, mat-footer-cell:last-of-type{
-  padding-right: 0px !important;
-}
 
 .mat-form-field {
   display: inline-block;
@@ -137,4 +129,12 @@ mat-cell:last-of-type, mat-header-cell:last-of-type, mat-footer-cell:last-of-typ
 
 .mat-dialog-content{
   overflow: inherit !important;
+}
+
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+  padding: 4px !important;
+}
+
+th.mat-header-cell{
+  display: none;
 }
