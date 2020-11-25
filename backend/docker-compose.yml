@@ -27,6 +27,7 @@ services:
       - mongodb_data_volume:/data/db
     networks:
       - mongo-compose-network
+    restart: unless-stopped
 
   disciplinas:
     build: ./
@@ -38,6 +39,7 @@ services:
       - 3333:3333
     networks:
       - mongo-compose-network
+    restart: unless-stopped
 
 networks:
   mongo-compose-network:
