@@ -22,6 +22,7 @@ export class EditFormComponent implements OnInit {
   isAtivo: true;
   nome: string;
   numTelefone: string;
+  turmas: [];
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: Content, private http: HttpClient, public dialogRef: MatDialogRef<EditFormComponent>) {
     console.log(data);
@@ -31,7 +32,8 @@ export class EditFormComponent implements OnInit {
     this.id = data.id,
     this.isAtivo = data.isAtivo,
     this.nome = data.nome,
-    this.numTelefone = data.numTelefone
+    this.numTelefone = data.numTelefone,
+    this.turmas = []
   }
 
   close(){
@@ -49,6 +51,7 @@ export class EditFormComponent implements OnInit {
       isAtivo : this.isAtivo,
       nome : this.nome,
       numTelefone : this.numTelefone,
+      turmas : this.turmas,
 
     }
     this.http.patch(`http://ec2-3-91-232-225.compute-1.amazonaws.com:3333/professores/${this.data.id}`, body)
@@ -61,6 +64,7 @@ export class EditFormComponent implements OnInit {
             this.data.isAtivo = this.isAtivo,
             this.data.nome = this.nome,
             this.data.numTelefone = this.numTelefone,
+            this.data.turmas = this.turmas,
             this.dialogRef.close();
         })
   }

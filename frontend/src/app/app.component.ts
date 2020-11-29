@@ -3,7 +3,6 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import { HttpClient } from '@angular/common/http';
-import {MatIcon} from "@angular/material/icon";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {AddFormComponent} from "./add-form/add-form.component";
 import {DeleteFormComponent} from "./delete-form/delete-form.component";
@@ -19,6 +18,7 @@ export interface Content {
   isAtivo: true;
   nome: string;
   numTelefone: string;
+  turmas: [];
 }
 
 @Component({
@@ -40,11 +40,14 @@ export class AppComponent {
   constructor(private http: HttpClient, private dialog: MatDialog) {
   }
 
+
   ngAfterViewInit() {
-    this.http.get<Content>('http://ec2-3-91-232-225.compute-1.amazonaws.com:3333/professores')
+    this.http.get<Content>('http://ec2-3-91-232-225.compute-1.amazonaws.com:3333/professores?expand=turma')
         .subscribe((data: Content[] | any) => {
           console.log(data);
           this.dataSource = new MatTableDataSource(data);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
         })
   }
 
@@ -64,6 +67,7 @@ export class AppComponent {
   }
 
   add(){
+    console.log()
     const dialogConfig= new MatDialogConfig();
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;
@@ -72,6 +76,7 @@ export class AppComponent {
   }
 
   edit(data: any){
+    console.log()
     const dialogConfig= new MatDialogConfig();
     dialogConfig.disableClose=true;
     dialogConfig.autoFocus=true;

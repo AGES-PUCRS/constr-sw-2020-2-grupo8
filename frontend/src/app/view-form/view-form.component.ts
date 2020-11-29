@@ -22,20 +22,27 @@ export class ViewFormComponent implements OnInit {
   isAtivo: true;
   nome: string;
   numTelefone: string;
+  turmas: [];
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: Content, private http: HttpClient, public dialogRef: MatDialogRef<ViewFormComponent>) {
     console.log(data);
     this.cdMatricula = data.cdMatricula,
-        this.email = data.email,
-        this.escola = data.escola,
-        this.id = data.id,
-        this.isAtivo = data.isAtivo,
-        this.nome = data.nome,
-        this.numTelefone = data.numTelefone
+    this.email = data.email,
+    this.escola = data.escola,
+    this.id = data.id,
+    this.isAtivo = data.isAtivo,
+    this.nome = data.nome,
+    this.numTelefone = data.numTelefone
+    this.turmas= data.turmas;
   }
 
   close(){
     this.dialogRef.close();
   }
+
+  getNumero(data: { turmas: any[]; }){
+    return data.turmas.map(a=>a.numero);
+  }
+
 
 }

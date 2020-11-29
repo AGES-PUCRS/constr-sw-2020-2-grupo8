@@ -22,6 +22,7 @@ export class AddFormComponent implements OnInit {
   isAtivo: true;
   nome: string;
   numTelefone: string;
+  turmas: [];
 
 
   constructor(private http: HttpClient, public dialogRef: MatDialogRef<DeleteFormComponent>) {
@@ -32,6 +33,7 @@ export class AddFormComponent implements OnInit {
     this.isAtivo = true;
     this.nome = '';
     this.numTelefone = '';
+    this.turmas = [];
   }
 
   close(){
@@ -46,7 +48,8 @@ export class AddFormComponent implements OnInit {
       id: this.id,
       isAtivo: this.isAtivo,
       nome: this.nome,
-      numTelefone: this.numTelefone
+      numTelefone: this.numTelefone,
+      turmas: this.turmas
     }
 
     this.http.post(`http://ec2-3-91-232-225.compute-1.amazonaws.com:3333/professores`, body)
@@ -58,9 +61,14 @@ export class AddFormComponent implements OnInit {
           this.isAtivo = true
           this.nome = ""
           this.numTelefone = ""
+          this.turmas = [];
           window.location.reload();
         })
   }
+
+    addNumero(String: any){
+       this.turmas.push();
+    }
 }
 
 
