@@ -100,7 +100,7 @@ header .header-login:hover {
 .add{
   width: 80px;
   height: 80px;
-  background: #3d92ea;
+  background: #80CBC4;
   border-radius: 50%;
   font-size: 50px;
   border-style: none;
@@ -137,4 +137,18 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 
 th.mat-header-cell{
   display: none;
+}
+
+.professores{
+  position: relative;
+  top: 50px;
+  left: 30px;
+}
+
+.mat-icon{
+  color: black;
+}
+
+.mat-raised-button:not([class*=mat-elevation-z]){
+  box-shadow: none;
 }

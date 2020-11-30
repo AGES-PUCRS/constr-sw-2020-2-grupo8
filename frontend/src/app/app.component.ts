@@ -42,7 +42,7 @@ export class AppComponent {
 
 
   ngAfterViewInit() {
-    this.http.get<Content>('http://ec2-3-93-232-78.compute-1.amazonaws.com:3333/professores?expand=turma')
+    this.http.get<Content>('http://3.231.200.235:3333/professores?expand=turma')
         .subscribe((data: Content[] | any) => {
           console.log(data);
           this.dataSource = new MatTableDataSource(data);

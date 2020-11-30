@@ -54,7 +54,7 @@ export class EditFormComponent implements OnInit {
       turmas : this.turmas,
 
     }
-    this.http.patch(`http://ec2-3-93-232-78.compute-1.amazonaws.com:3333/professores/${this.data.id}`, body)
+    this.http.patch(`http://3.231.200.235:3333/professores/${this.data.id}`, body)
         .subscribe((dataa: Content[] | any) => {
           console.log(dataa);
             this.data.cdMatricula = this.cdMatricula,

@@ -8,6 +8,7 @@ body {
   "Helvetica Neue",
   sans-serif;
   background: #F0F0F5 url("assets/background.svg") no-repeat left bottom;
+  overflow: hidden;
 }
 
 section{
