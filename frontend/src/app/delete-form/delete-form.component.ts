@@ -40,7 +40,7 @@ export class DeleteFormComponent implements OnInit {
   }
 
   submit(){
-    this.http.delete(`http://ec2-3-91-232-225.compute-1.amazonaws.com:3333/professores/${(this.id)}`)
+    this.http.delete(`http://ec2-3-93-232-78.compute-1.amazonaws.com:3333/professores/${(this.id)}`)
         .subscribe((dataa: Content[] | any) => {
           window.location.reload();
 

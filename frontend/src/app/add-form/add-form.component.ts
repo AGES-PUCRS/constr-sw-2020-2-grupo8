@@ -52,7 +52,7 @@ export class AddFormComponent implements OnInit {
       turmas: this.turmas
     }
 
-    this.http.post(`http://ec2-3-91-232-225.compute-1.amazonaws.com:3333/professores`, body)
+    this.http.post(`http://ec2-3-93-232-78.compute-1.amazonaws.com:3333/professores`, body)
         .subscribe((dataa: Content[] | any) => {
           this.cdMatricula = ""
           this.email = ""
@@ -66,9 +66,6 @@ export class AddFormComponent implements OnInit {
         })
   }
 
-    addNumero(String: any){
-       this.turmas.push();
-    }
 }
 
 

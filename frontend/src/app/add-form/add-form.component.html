@@ -37,13 +37,6 @@
     </div>
 
 
-    <div class="form">
-        <label>
-            <span>turmas</span>
-            <input (input)="turmas.numero=$event.target.value" value="{{data.turmas.numero}}">
-        </label>
-    </div>
-
     <button mat-raised-button color="primary" class="cancelar" (click)="close()" >CANCELAR</button>
     <button mat-raised-button color="primary" class="salvar" (click)="submit()" >SALVAR</button>
 </div>
