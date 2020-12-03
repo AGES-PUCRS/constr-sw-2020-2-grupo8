@@ -10,4 +10,4 @@ mongod --fork --logpath /var/log/mongod.log
 
 mongo admin --eval 'db.createUser({user: "root", pwd: "password", roles: [ "root" ]});'
 
-cd backend && npm run dev
+npm run dev
