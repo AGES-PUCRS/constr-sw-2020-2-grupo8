@@ -28,7 +28,7 @@ RUN apt-get install curl gnupg -y
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x%7C
 
-RUN apt-get install -y nodejs
+RUN apt-get install npm -y
 
 COPY . .
 
