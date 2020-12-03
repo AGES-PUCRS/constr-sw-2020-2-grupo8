@@ -6,9 +6,9 @@ COPY ./backend .
 
 RUN apt-get update && apt-get install curl gnupg -y
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x%7C bash -
+RUN curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
 
-RUN apt-get install build-essential nodejs mongodb -y
+RUN sudo apt-get install -y nodejs
 
 RUN npm install
 
