@@ -1,39 +1,22 @@
-# FROM ubuntu:20.04
-
-# WORKDIR /usr/src/app
-
-# COPY ./backend .
-
-# RUN apt-get update && apt-get install curl gnupg -y
-
-# RUN curl -sL https://deb.nodesource.com/setup_15.x
-# #RUN curl --silent --location https://deb.nodesource.com/setup_15.x | sudo bash -
-
-# #RUN sudo apt-get install -y nodejs
-# RUN apt-get install -y nodejs
-
-# RUN npm install
-
-# EXPOSE 3000
-
-# ENTRYPOINT "./entrypoint.sh"
 
 FROM ubuntu:18.04
 
 WORKDIR /usr/src/app
 
+COPY ./entrypoint.sh .
+
 RUN apt-get update
 
 RUN apt-get install curl gnupg -y
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x%7C
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
-RUN apt-get install npm -y
+RUN apt-get install -y nodejs mongodb
 
-COPY . .
+COPY ./backend .
 
 RUN npm install
 
 EXPOSE 3000
 
-ENTRYPOINT "./docker/entrypoint.sh"
+ENTRYPOINT "./entrypoint.sh"
