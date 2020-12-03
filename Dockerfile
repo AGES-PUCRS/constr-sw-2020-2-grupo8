@@ -6,7 +6,7 @@ COPY ./backend .
 
 RUN apt-get update && apt-get install curl gnupg -y
 
-RUN curl -sL https://deb.nodesource.com/setup_15.x | -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_15.x
 #RUN curl --silent --location https://deb.nodesource.com/setup_15.x | sudo bash -
 
 #RUN sudo apt-get install -y nodejs
